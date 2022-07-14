@@ -209,10 +209,15 @@ a {
   font-weight: 600;
   margin: 1rem 0;
   padding: 2rem 3rem;
-  /* FIXME: padding should be "2rem 9.5rem" but currently following tutorial */
+  /* FIXME: padding should be "2rem 9.5rem" but currently following tutorial (UPDATE: created a new skin, used padding values for desktop as all)*/
   text-align: center;
   text-transform: uppercase;
   white-space: nowrap;
+}
+
+.btn--stretched {
+  padding-left: 6rem;
+  padding-right: 6rem;
 }
 
 .btn--block {
@@ -258,7 +263,7 @@ a {
   color: white;
 }
 
-/* FIXME: padding: 2rem 6rem; should be in the media query but currently following the tutorial */
+/* FIXME: padding: 2rem 6rem; should be in the media query but currently following the tutorial (UPDATE: fixed) */
 @media screen and (min-width: 1024px) {
   .btn {
     font-size: 1.5rem;
@@ -500,5 +505,46 @@ a {
 
   .testimonial .quote {
     margin-left: 6rem;
+  }
+}
+
+/* Callouts */
+.callout {
+  padding: 4rem;
+  border-radius: 5px;
+  color: #fff;
+}
+
+.callout__heading {
+  color: #fff;
+  margin-top: 0;
+  font-size: 3rem;
+}
+
+.callout--primary {
+  background-color: var(--color-primary);
+}
+
+.callout .btn {
+  justify-self: center;
+  align-self: center;
+}
+
+.callout__content {
+  text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+  .callout__content {
+    text-align: left;
+  }
+
+  .callout .btn {
+    justify-self: start;
+    margin: 0 2rem;
+  }
+
+  .callout .grid--1x2 {
+    grid-template-columns: 1fr auto;
   }
 }
