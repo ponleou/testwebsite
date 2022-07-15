@@ -548,3 +548,38 @@ a {
     grid-template-columns: 1fr auto;
   }
 }
+
+/* Collapsible */
+.collapsible__header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.collapsible__heading {
+  margin-top: 0;
+  font-size: 3rem;
+}
+
+.collapsible__chevron {
+  transform: rotate(-90deg);
+  transition: transform 0.3s;
+}
+
+.collapsible__content {
+  max-height: 0;
+  /* we also use max-height here so we can animate it */
+  overflow: hidden;
+  /* because it max-height is 0, the height is 0 that means the container has overflow */
+  opacity: 0;
+  transition: all 0.3s;
+}
+
+.collapsible--expanded .collapsible__chevron {
+  transform: rotate(0);
+}
+
+.collapsible--expanded .collapsible__content {
+  max-height: 100vh;
+  opacity: 1;
+  /* we use max-height because the container's height will still be dependant on its content (it will expand its height just enough to fit the content) */
+}
