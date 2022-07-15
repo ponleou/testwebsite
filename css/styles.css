@@ -583,3 +583,43 @@ a {
   opacity: 1;
   /* we use max-height because the container's height will still be dependant on its content (it will expand its height just enough to fit the content) */
 }
+
+/* Blocks */
+.block {
+  --padding-vertical: 6rem;
+  padding: var(--padding-vertical) 2rem;
+}
+
+.block__heading {
+  margin-top: 0;
+}
+
+.block--dark {
+  background-color: black;
+  color: #7b858b;
+}
+
+.block--dark .block__heading {
+  color: #fff;
+}
+
+.block--skewed-right {
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 80%);
+  padding-bottom: calc(var(--padding-vertical) + 4rem);
+}
+
+.block--skewed-left {
+  clip-path: polygon(0% 0%, 100% 0%, 100% 80%, 0% 100%);
+  padding-bottom: calc(var(--padding-vertical) + 4rem);
+}
+
+.block__header {
+  text-align: center;
+}
+
+.container {
+  max-width: 1140px;
+  /* small tip: if we are going to use px units for something that has to be responsive, consider the max-... property */
+  margin: 0 auto;
+  /* margin auto works when the container has a width */
+}
